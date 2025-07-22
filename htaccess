@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# Skip existing files and folders (images, CSS, JS, PHP files, etc.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Rewrite clean URLs to internal PHP handlers
+RewriteRule  ^category/(.*)/?$        category.php?slug=$1     [NC,L]
+RewriteRule  ^page/(.*)/?$            page.php?slug=$1         [NC,L]
+RewriteRule  ^blog/(.*)/?$            blog.php?slug=$1         [NC,L]
+RewriteRule  ^service/(.*)/?$         service.php?slug=$1      [NC,L]
+RewriteRule  ^team-member/(.*)/?$     team-member.php?slug=$1  [NC,L]
+RewriteRule  ^search/?$               search.php               [NC,L]
+RewriteRule  ^payment/?$              payment.php              [NC,L]
+RewriteRule  ^success/?$              success.php              [NC,L]
+RewriteRule  ^confirm/?$              confirm.php              [NC,L]
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ttf|ttc|otf|eot|woff|font.css|css)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
