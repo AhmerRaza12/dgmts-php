@@ -1,17 +1,61 @@
 <?php
 $distributor_url = '#authorized-distributor'; // Ensures smooth in-page scroll
 $slides = [
-    "https://data.fine.cz/feature-carousel-image/intuitive-friendly-1.png",
-    "https://data.fine.cz/feature-carousel-image/survey-to-design.png",
-    "https://data.fine.cz/feature-carousel-image/analytic-fem-1.png",
-    "https://data.fine.cz/feature-carousel-image/geo5-geological-data-collector-app-stratigraphy-site-investigation-mobile.png",
-    "https://data.fine.cz/feature-carousel-image/bim.png",
-    "https://data.fine.cz/feature-carousel-image/normy.png",
-    "https://data.fine.cz/feature-carousel-image/reports.png",
-    "https://data.fine.cz/feature-carousel-image/linked-together-1.png",
-    "https://data.fine.cz/feature-carousel-image/geo5_23_languages_feature.png",
-    "https://data.fine.cz/feature-carousel-image/training-materials.png",
-    "https://data.fine.cz/feature-carousel-image/geo5_catalogs-of-manufacturers-concrete-retaining-blocks-steel-sheeting-profiles-geotechnical-software-2.png"
+    [
+        'image' => "https://data.fine.cz/feature-carousel-image/intuitive-friendly-1.png",
+        'title' => "Intuitive Interface Top-Down Workflow",
+        'description' => "GEO5 programs have unified environment and intuitive top-down workflow."
+    ],
+    [
+        'image' => "https://data.fine.cz/feature-carousel-image/survey-to-design.png",
+        'title' => "From the Survey to the Advanced Design",
+        'description' => "GEO5 integrates geological data modeling with advanced geotechnical tasks."
+    ],
+    [
+        'image' => "https://data.fine.cz/feature-carousel-image/analytic-fem-1.png",
+        'title' => "Analytical Methods & FEM",
+        'description' => "GEO5 enables comparison of two independent solutions."
+    ],
+    [
+        'image' => "https://data.fine.cz/feature-carousel-image/geo5-geological-data-collector-app-stratigraphy-site-investigation-mobile.png",
+        'title' => "Mobile App for Borehole Logging",
+        'description' => "Collect geological data in the field and send it to the Stratigraphy program."
+    ],
+    [
+        'image' => "https://data.fine.cz/feature-carousel-image/bim.png",
+        'title' => "BIM Support",
+        'description' => "GEO5 export data to common BIM formats and share them with third-party programs."
+    ],
+    [
+        'image' => "https://data.fine.cz/feature-carousel-image/normy.png",
+        'title' => "Many Standards and Methods",
+        'description' => "GEO5 is a universal tool for engineers all over the world."
+    ],
+    [
+        'image' => "https://data.fine.cz/feature-carousel-image/reports.png",
+        'title' => "Comprehensive Outputs",
+        'description' => "GEO5 output reports can be easily edited or exported to PDF or MS Word formats."
+    ],
+    [
+        'image' => "https://data.fine.cz/feature-carousel-image/linked-together-1.png",
+        'title' => "Programs Linked Together",
+        'description' => "GEO5 enables to transfer data between individual programs."
+    ],
+    [
+        'image' => "https://data.fine.cz/feature-carousel-image/geo5_23_languages_feature.png",
+        'title' => "Output Report Languages",
+        'description' => "GEO5 generates output reports in variety of languages - useful for foreign projects."
+    ],
+    [
+        'image' => "https://data.fine.cz/feature-carousel-image/training-materials.png",
+        'title' => "Training Materials",
+        'description' => "Our tutorials and manuals guide you quickly through the programs."
+    ],
+    [
+        'image' => "https://data.fine.cz/feature-carousel-image/geo5_catalogs-of-manufacturers-concrete-retaining-blocks-steel-sheeting-profiles-geotechnical-software-2.png",
+        'title' => "Catalogs of Manufacturers",
+        'description' => "GEO5 contains catalogs of profiles, sheet piles, anchors, nails, geogrids and blocks."
+    ]
 ];
 ?>
 
@@ -30,7 +74,8 @@ html {
     scroll-margin-top: 80px;
 }
 .geo5-left {
-    flex: 1 1 300px;
+    flex: 1 1 500px;
+    max-width: 550px;
 }
 .geo5-link {
     color: #007BFF;
@@ -49,18 +94,24 @@ html {
     height: 100px;
 }
 .geo5-right {
-    flex: 1 1 400px;
+    flex: 1 1 500px;
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    min-height: 280px;
+    min-height: 400px;
     background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .geo5-slider-container {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .geo5-slides-track {
     display: flex;
@@ -72,6 +123,8 @@ html {
     height: 100%;
     object-fit: contain;
     flex-shrink: 0;
+    max-width: 100%;
+    max-height: 100%;
 }
 .geo5-controls {
     position: absolute;
@@ -96,7 +149,7 @@ html {
 }
 .geo5-dots {
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -113,6 +166,8 @@ html {
 .geo5-dots .active-dot {
     background: #007BFF;
 }
+
+
 @media (max-width: 600px) {
     .geo5-wrap {
         flex-direction: column;
@@ -128,8 +183,8 @@ html {
 /* Authorized Distributor Section */
 #authorized-distributor {
     /* background: #f2f2f2; */
-    padding: 80px 20px;
-    margin-top: 80px;
+    padding: 40px 20px;
+    margin-top: 20px;
     font-family: Arial, sans-serif;
 }
 #authorized-distributor .geo5-subheading {
@@ -201,19 +256,28 @@ html {
 }
 </style>
 
-<!-- Slideshow Section -->
+<!-- GEO5 Section with New Image and Headings -->
 <section class="geo5-wrap">
     <div class="geo5-left">
-        <a href="<?php echo $distributor_url; ?>" class="geo5-link">
-            Authorized Distributor for US<br>GEO5 Geotechnical Software
-        </a>
-        <img src="<?php echo BASE_URL; ?>assets/images/geo5-n-finec/finec.png" alt="Fine Software Logo">
+        <img src="<?php echo BASE_URL; ?>assets/uploads/GEO5-black+border-big.png" alt="GEO5 Logo" style="max-width: 250px; height: auto; margin-bottom: 20px;">
+        <h1 style="font-size: 32px; color: #000000; margin: 0 0 10px 0; font-weight: bold;">Geotechnical Software</h1>
+        <h2 style="font-size: 24px; color: #000000; margin: 0 0 30px 0; font-weight: bold; white-space: nowrap;">From Geological Survey to Geological Design</h2>
     </div>
-    <div class="geo5-right">
+</section>
+
+<!-- Carousel Section -->
+<section class="geo5-carousel-section" style="padding: 40px 15px; text-align: center;">
+    <div class="geo5-carousel-container" style="max-width: 800px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 450px; background: #fff;">
         <div class="geo5-slider-container">
             <div class="geo5-slides-track">
-                <?php foreach ($slides as $i => $src): ?>
-                    <img src="<?php echo $src; ?>" alt="GEO5 feature <?php echo $i+1; ?>" class="geo5-slide">
+                <?php foreach ($slides as $i => $slide): ?>
+                    <div class="geo5-slide" style="min-width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+                        <img src="<?php echo $slide['image']; ?>" alt="<?php echo $slide['title']; ?>" style="max-width: 100%; max-height: 90%; object-fit: contain; margin-bottom: 15px;">
+                        <div style="text-align: center;">
+                            <h3 style="font-size: 18px; font-weight: bold; color: #2b2b2b; margin: 0 0 10px 0;"><?php echo $slide['title']; ?></h3>
+                            <p style="font-size: 14px; color: #666; line-height: 1.5; margin: 0;"><?php echo $slide['description']; ?></p>
+                        </div>
+                    </div>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -222,7 +286,7 @@ html {
             <button onclick="changeSlide(1)">&#10095;</button>
         </div>
         <div class="geo5-dots">
-            <?php foreach ($slides as $i => $_): ?>
+            <?php foreach ($slides as $i => $slide): ?>
                 <span class="<?php echo $i === 0 ? 'active-dot' : ''; ?>" onclick="goToSlide(<?php echo $i; ?>)"></span>
             <?php endforeach; ?>
         </div>
@@ -231,15 +295,6 @@ html {
 
 <!-- Authorized Distributor Section -->
 <section id="authorized-distributor">
-    <div class="geo5-header">
-        <div class="geo5-logo">
-            <img src="<?php echo BASE_URL; ?>assets/images/geo5-n-finec/geo-5.png" alt="GEO5 Logo" width="200">
-        </div>
-        <div class="geo5-title">
-            <h2>GEO5</h2>
-            <h2>Geotechnical Software</h2>
-        </div>
-    </div>
     <div class="geo5-content">
         <p><strong>DGMTS</strong> is proud to be an authorized distributor in the United States for <strong>GEO5</strong>, a cutting-edge geotechnical engineering software suite developed by <strong>Fine Software</strong>, as part of our technology solutions. <strong>GEO5</strong> is a user-friendly and powerful platform that covers the full scope of geotechnical analysis—from site investigation and soil profiling to the design of foundations, retaining structures, slopes, and underground works. With intuitive modeling tools, robust computational methods, and compliance with international design codes, <strong>GEO5</strong> is ideal for engineers, consultants, and researchers seeking accuracy, efficiency, and reliability.</p>
 
@@ -272,7 +327,7 @@ let slideWidth = slides[0].clientWidth;
 let interval = setInterval(nextSlide, 5000);
 
 function updateSlidePosition() {
-    slideTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    slideTrack.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
 }
 function updateDots() {
     dots.forEach((dot, index) => dot.classList.toggle('active-dot', index === currentIndex));

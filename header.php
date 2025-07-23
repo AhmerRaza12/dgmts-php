@@ -378,28 +378,14 @@ foreach ($result as $row)
 		<div class="top-bar">
 			<div class="container">
 				<div class="row">
-					<!-- <div class="col-md-4 top-contact"> -->
-						<a  href="<?php echo BASE_URL; ?>index.php">
+					<div class="col-md-6">
+						<a href="<?php echo BASE_URL; ?>index.php">
 							<img class="logo_image" src="<?php echo BASE_URL; ?>assets/img/logo.png" alt="logo">
 						</a>
-					<!-- </div> -->
-					<!-- <div class="col-md-8 top-social">
-						<ul>
-							<?php
-							// Getting and showing all the social media icon URL from the database
-							// $statement = $pdo->prepare("SELECT * FROM tbl_social");
-							// $statement->execute();
-							// $result = $statement->fetchAll(PDO::FETCH_ASSOC);							
-							// foreach ($result as $row) 
-							// {
-							// 	if($row['social_url']!='')
-							// 	{
-							// 		echo '<li><a href="'.$row['social_url'].'"><i class="'.$row['social_icon'].'"></i></a></li>';
-							// 	}
-							// }
-							?>
-						</ul>
-					</div> -->
+					</div>
+					<div class="col-md-6" style="text-align: right; padding-top: 25px;">
+						<img src="<?php echo BASE_URL; ?>assets/uploads/geo5-authorized-partner-footer.png" alt="GEO5 Authorized Partner" style="max-height: 80px; max-width: 180px; vertical-align: middle;">
+					</div>
 				</div>
 			</div>
 		</div>
